@@ -1,37 +1,47 @@
-# MNAD - DASA 2021
+# About the MNAD Dataset
+The MNAD corpus is a collection of over **1 million Moroccan news articles** written in modern Arabic language. These news articles have been gathered from 11 prominent electronic news sources. The dataset is made available to the academic community for research purposes, such as data mining (clustering, classification, etc.), information retrieval (ranking, search, etc.), and other non-commercial activities.
 
-MNAD, a large-scale news articles dataset, based on four of the major moroccan news websites, containing more than 418k news articles corresponding to 19 different categories, we collected: the title, body and label of each article.
-The data has been cleaned, preprocessed, and saved into four .csv files for easy use by ML models. 
+## Dataset Fields
+- Title: The title of the article
+- Body: The body of the article
+- Category: The category of the article
+- Source: The Electronic News paper source of the article
 
-You can download the data [here](https://www.kaggle.com/jmourad100/mnad-moroccan-news-articles-dataset). The use of the data set is restricted to academic research purpose only.
+## About Version 1 of the Dataset (MNAD.v1)
+Version 1 of the dataset comprises 418,563 articles classified into 19 categories. The data was collected from well-known electronic news sources, namely Akhbarona.ma, Hespress.ma, Hibapress.com, and Le360.com. The articles were stored in four separate CSV files, each corresponding to the news website source. Each CSV file contains three fields: Title, Body, and Category of the news article.
 
-# Citation
+The dataset is rich in Arabic vocabulary, with approximately 906,125 unique words. It has been utilized as a benchmark in the research paper:
+```"A Moroccan News Articles Dataset (MNAD) For Arabic Text Categorization". In 2021 International Conference on Decision Aid Sciences and Application (DASA).```
 
-Please cite our paper if you find the data helpful, thanks!
+This dataset is available for download from the following sources:
+- Kaggle Datasets : [MNADv1](https://www.kaggle.com/datasets/jmourad100/mnad-moroccan-news-articles-dataset)
+- Huggingface Datasets: [MNADv1](https://huggingface.co/datasets/J-Mourad/MNAD.v1)
 
-```
-@InProceedings{MNAD:DASA21,
-@INPROCEEDINGS{9682402,
-  author={Jbene, Mourad and Tigani, Smail and Saadane, Rachid and Chehri, Abdellah},
-  booktitle={2021 International Conference on Decision Aid Sciences and Application (DASA)}, 
-  title={A Moroccan News Articles Dataset (MNAD) For Arabic Text Categorization},
-  abstract  = {In recent years Natural language processing is one of the most active areas of research especially with the emergence of deep learning algorithms. More attention has been given to Latin descendent languages e.g English, French, and Spanish given the availability of high-quality datasets and compute resources. In this paper, we present a moroccan News Articles Corpus collected from four of the major moroccan news websites. The corpus contains more than 418k news articles corresponding to 19 different categories, thus considered to be one of the largest Arabic news articles corpora. A description of the collection and processing steps were presented and exploration analysis was performed. To prove the utility of the dataset. An evaluation step was conducted in the context of text classifcation using four different Machine Learning baselines: Random Forest (RF), Multinomial Naive Bayes (MNB), Support Vector Machine (SVC), and Gradient Boosting (GradBoost) Classifers. The experimental results are presented in terms of accuracy, F1-score, and confusion matrix.},
-  year={2021},
-  volume={},
-  number={},
-  pages={350-353},
-  doi={10.1109/DASA53625.2021.9682402}}
+## About Version 2 of the Dataset (MNAD.v2)
+Version 2 of the MNAD dataset includes an additional 653,901 articles, bringing the total number of articles to over 1 million (1,069,489), classified into the same 19 categories as in version 1. The new documents were collected from seven additional prominent Moroccan news websites, namely al3omk.com, medi1news.com, alayam24.com, anfaspress.com, alyaoum24.com, barlamane.com, and SnrtNews.com.
+
+The newly collected articles have been merged with the articles from the previous version into a single CSV file named ```MNADv2.csv```. This file includes an additional column called "Source" to indicate the source of each news article.
+
+Furthermore, MNAD.v2 incorporates improved pre-processing techniques and data cleaning methods. These enhancements involve removing duplicates, eliminating multiple spaces, discarding rows with NaN values, replacing new lines with "\n", excluding very long and very short articles, and removing non-Arabic articles. These additions and improvements aim to enhance the usability and value of the MNAD dataset for researchers and practitioners in the field of Arabic text analysis.
+
+This dataset is available for download from the following sources:
+- Kaggle Datasets : [MNADv2](https://huggingface.co/datasets/J-Mourad/MNAD.v2)
+- Huggingface Datasets: [MNADv2](https://huggingface.co/datasets/J-Mourad/MNAD.v2)
+
+## Citation
+If you use our data, please cite the following paper:
+
+```bibtex
+@inproceedings{MNAD2021,
+    author    = {Mourad Jbene and 
+                 Smail Tigani and 
+                 Rachid Saadane and 
+                 Abdellah Chehri},
+    title     = {A Moroccan News Articles Dataset ({MNAD}) For Arabic Text Categorization},
+    year      = {2021},
+    publisher = {{IEEE}},
+    booktitle = {2021 International Conference on Decision Aid Sciences and Application ({DASA})}
+    doi       = {10.1109/dasa53625.2021.9682402},
+    url       = {https://doi.org/10.1109/dasa53625.2021.9682402},
 }
-```
-
-# Sample
-
-```
-<!-- [
-  {
-   "Title":"هذا مصير المتورطين في أحداث شغب بعد مباراة تطوان والكوكب",
-   "Body":"أدانت المحكمة الابتدائية بتطوان، مساء امس الثلاثاء، 14 شخصا اعتقلوا خلال أحداث الشغب التي تلت مباراة المغرب التطواني والكوكب المراكشي يوم 28 شتنبر 2018 وتسببت في تخريب عدد من السيارات والمرافق العمومية بوسط المدينة. هيئة المحكمة وبعد المداولات منحت الكلمة للمحامين المدافعين عن المتهمين والذي طالبوا باطلاق سراح موكليهم، قبل ان تعلن الهيئة القضائية عن توزيع أحكاما تراوحت بين 10 أشهر نافذة وشهر واحد. ابتدائية تطوان التي استمعت لافادات المتهمين في هذه القضية أدانت المتابعين فيها بعد ان وجهت اليهم تهم تخريب ممتلكات عمومية والمشاركة في اعمال شغب، وقضت بحبس أربعة متهمين لـ10 أشهر نافذة، فيما حكمت على عشرة آخرين بـشهر نافذ. الاحداث التي وقعت بمدينة تطوان، كانت قد انطلقت بعد نهاية مباراة المغرب التطواني والكوكب المراكشي احتجاجا على وفاة الشابة حياة بلقاسم برصاص البحرية الملكية بسواحل المضيق عندما كانت تحاول الهجرة نحو إسبانيا.",
-   "Category":"Society"
-   }
-] -->
 ```
